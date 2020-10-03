@@ -15,7 +15,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    boolean nonStop=true;
+    public boolean nonStop=true;
     TextView mytextView;
     Button btnStartThread;
     Button btnStopThread;
@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         btnStartThread=(Button)findViewById(R.id.startThread);
         btnStartThread.setOnClickListener(new View.OnClickListener() {
             int i=0;
+
             @Override
             public void onClick(View v) {
                 new Thread(new Runnable() {
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                         }
+                        nonStop=true;
                     }
                 }).start();
 
